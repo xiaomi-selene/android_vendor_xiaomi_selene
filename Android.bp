@@ -7533,14 +7533,14 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libwvhidl",
+	name: "libwvaidl",
 	owner: "xiaomi",
 	strip: {
 		none: true,
 	},
 	target: {
 		: {
-			srcs: ["proprietary/vendor/lib64/libwvhidl.so"],
+			srcs: ["proprietary/vendor/lib64/libwvaidl.so"],
 			shared_libs: [ ],
 		},
 	},

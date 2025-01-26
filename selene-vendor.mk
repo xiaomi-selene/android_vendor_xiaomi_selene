@@ -1069,7 +1069,7 @@ PRODUCT_PACKAGES += \
     libwapi \
     libwifi-hal-mtk \
     libwpfa \
-    libwvhidl \
+    libwvaidl \
     libxmi_high_dynamic_range \
     libwvdrmengine \
     libmtkcam_streaminfo_plugin-p1stt \
