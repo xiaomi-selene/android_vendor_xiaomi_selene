@@ -6,12 +6,13 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),selene)
 
-$(call add-radio-file-sha1-checked,radio/lk.img,0b9ecba9453e280ba1fa47146635a9aac161ffed)
-$(call add-radio-file-sha1-checked,radio/md1img.img,ea9f4824d64c210f432818f10e33ab4e48f66a38)
-$(call add-radio-file-sha1-checked,radio/preloader_raw.img,bf13f38b66ee8155ea91a6e55f1fd440c0f7d010)
-$(call add-radio-file-sha1-checked,radio/scp.img,810021d22142ff52b7d4c5604d3bb4a52b913472)
-$(call add-radio-file-sha1-checked,radio/spmfw.img,a695ad99871196d46c9bb1e5e86ae7beff2ca8ef)
-$(call add-radio-file-sha1-checked,radio/sspm.img,d7615c1370f9053d52471a2d554da8f3b37bfe5c)
-$(call add-radio-file-sha1-checked,radio/tee.img,e4dbf59a1f6b1698ea97ce728da356a8ad26bb6b)
+ifeq ($(LOCAL_PATH)/radio, $(wildcard $(LOCAL_PATH)/radio))
+
+RADIO_FILES := $(wildcard $(LOCAL_PATH)/radio/*)
+$(foreach f, $(notdir $(RADIO_FILES)), \
+    $(call add-radio-file,radio/$(f)))
+$(call add-radio-file,../../../device/xiaomi/selene/radio/filesmap)
+
+endif
 
 endif
